@@ -126,7 +126,7 @@ func main() {
 	nextTS := currentTS + 1
 
 
-  var l int = 1
+  var l int = 0
 
 	fmt.Println("                                     curr   next")
 	for _, record := range cfg {
@@ -138,10 +138,13 @@ func main() {
 		nextToken := authCodeOrDie(secret, nextTS)
 		//fmt.Printf("%-30s %s \033[31m\033[1m%s \033[0m\033[32m%s \033[0m\n", name, prevToken, currentToken, nextToken)
 		if l%2 == 0 {
-      fmt.Printf("%-36s \033[91m\033[1m%s \033[0m\033[92m%s \033[0m\n", name, currentToken,  nextToken, "\n")
-    } else {
-		  fmt.Printf("%-36s \033[31m\033[1m%s \033[0m\033[32m%s \033[0m\n", name, currentToken,  nextToken)
+                	fmt.Printf("%-36s \033[91m\033[1m%s \033[0m\033[92m%s \033[0m\n", name, currentToken,  nextToken)
+                } else {
+			fmt.Printf("\033[037m %-36s \033[31m\033[1m%s \033[0m\033[32m%s \033[0m\n", name, currentToken,  nextToken)
 		}
+		//if l%3 == 0 {
+		//	fmt.Printf("\n")
+                //}
 
 		// bash test:  echo -e "PREV \e[31m \e[1m CURR \e[0m \e[32m NEXT \e[0m"
 		// bash test:  echo -e "PREV \033[31m \033[1m CURR \033[0m \033[32m NEXT\033[0m"
