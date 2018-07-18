@@ -138,7 +138,7 @@ func main() {
 		nextToken := authCodeOrDie(secret, nextTS)
 		//fmt.Printf("%-30s %s \033[31m\033[1m%s \033[0m\033[32m%s \033[0m\n", name, prevToken, currentToken, nextToken)
 		if l%2 == 0 {
-      fmt.Printf("%-36s \033[91m\033[1m%s \033[0m\033[92m%s \033[0m\n\n", name, currentToken,  nextToken)
+      fmt.Printf("%-36s \033[91m\033[1m%s \033[0m\033[92m%s \033[0m\n", name, currentToken,  nextToken, "\n")
     } else {
 		  fmt.Printf("%-36s \033[31m\033[1m%s \033[0m\033[32m%s \033[0m\n", name, currentToken,  nextToken)
 		}
