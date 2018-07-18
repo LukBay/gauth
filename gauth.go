@@ -142,6 +142,9 @@ func main() {
     } else {
 		  fmt.Printf("%-36s \033[31m\033[1m%s \033[0m\033[32m%s \033[0m\n", name, currentToken,  nextToken)
 		}
+		if l%3 == 0 {
+			fmt.Printf("\n")
+		}
 		// bash test:  echo -e "PREV \e[31m \e[1m CURR \e[0m \e[32m NEXT \e[0m"
 		// bash test:  echo -e "PREV \033[31m \033[1m CURR \033[0m \033[32m NEXT\033[0m"
 	}
